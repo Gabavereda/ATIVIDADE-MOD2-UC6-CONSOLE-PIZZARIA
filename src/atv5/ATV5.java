@@ -1,17 +1,13 @@
-
 package atv5;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class ATV5 {
 
-    
     public static void main(String[] args) {
-        
-        
+
         Scanner entrada = new Scanner(System.in);
         Cardapio cardapio = new Cardapio("PizzaTop");
 
@@ -72,7 +68,7 @@ public class ATV5 {
         System.out.print("Quantidade de Ingredientes: ");
         int quantidadeIngredientes = entrada.nextInt();
 
-        entrada.nextLine(); 
+        entrada.nextLine();
         List<String> ingredientes = new ArrayList<>();
         for (int i = 1; i <= quantidadeIngredientes; i++) {
             System.out.print("Ingrediente " + i + ": ");
@@ -137,24 +133,23 @@ public class ATV5 {
 
     private static void adicionarPizzaAoPedido(Scanner entrada, Cardapio cardapio, Pedido pedido) {
         cardapio.imprimirCardapio();
-    System.out.print("Escolha o número da pizza: ");
-    int numeroPizza = entrada.nextInt();
+        System.out.print("Escolha o número da pizza: ");
+        int numeroPizza = entrada.nextInt();
 
-    List<ItemCardapio> itensCardapio = cardapio.getItensCardapio();
-    if (numeroPizza >= 1 && numeroPizza <= itensCardapio.size()) {
-        ItemCardapio itemEscolhido = itensCardapio.get(numeroPizza - 1);
-        if (itemEscolhido instanceof Pizza) {
-            Pizza pizzaEscolhida = (Pizza) itemEscolhido;
-            pedido.adicionarPizza(pizzaEscolhida);
-            System.out.println("Pizza adicionada ao pedido.");
+        List<ItemCardapio> itensCardapio = cardapio.getItensCardapio();
+        if (numeroPizza >= 1 && numeroPizza <= itensCardapio.size()) {
+            ItemCardapio itemEscolhido = itensCardapio.get(numeroPizza - 1);
+            if (itemEscolhido instanceof Pizza) {
+                Pizza pizzaEscolhida = (Pizza) itemEscolhido;
+                pedido.adicionarPizza(pizzaEscolhida);
+                System.out.println("Pizza adicionada ao pedido.");
+            } else {
+                System.out.println("Escolha inválida. O item selecionado não é uma pizza.");
+            }
         } else {
-            System.out.println("Escolha inválida. O item selecionado não é uma pizza.");
+            System.out.println("Número de pizza inválido. Tente novamente.");
         }
-    } else {
-        System.out.println("Número de pizza inválido. Tente novamente.");
     }
-}
-    
 
     private static void adicionarBebidaAoPedido(Scanner entrada, Cardapio cardapio, Pedido pedido) {
         cardapio.imprimirCardapio();
@@ -167,19 +162,12 @@ public class ATV5 {
     }
 
     private static void cadastrarPedido(Scanner entrada) {
-        
+
         System.out.println("Pedido cadastrado para a cozinha.");
     }
 
     private static void extrairProximoPedido() {
-       
+
         System.out.println("Próximo pedido preparado e pronto para ser levado ao cliente.");
     }
 }
-        
-        
-        
-        
-    
-    
-

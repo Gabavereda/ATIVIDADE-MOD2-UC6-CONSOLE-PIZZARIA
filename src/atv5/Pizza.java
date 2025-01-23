@@ -2,11 +2,10 @@ package atv5;
 
 import java.util.List;
 
-public class Pizza extends ItemCardapio{
-    
-   
+public class Pizza extends ItemCardapio {
+
     private int tamanho;
- 
+
     private char sabor; // 'D'= doce , 'S' = Salgada
     private List<String> ingredientes;
 
@@ -20,7 +19,7 @@ public class Pizza extends ItemCardapio{
     @Override
     public void imprimirDados() {
         super.imprimirDados();
-        System.out.println("Tamanho: " + tamanho + " cm");        
+        System.out.println("Tamanho: " + tamanho + " cm");
         System.out.println("Sabor: " + (sabor == 'D' ? "Doce" : "Salgada"));
         System.out.println("Ingredientes:");
         for (String ingrediente : ingredientes) {
@@ -28,5 +27,3 @@ public class Pizza extends ItemCardapio{
         }
     }
 }
-
- 

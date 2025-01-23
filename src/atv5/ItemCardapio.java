@@ -1,8 +1,7 @@
-
 package atv5;
 
-
 public class ItemCardapio {
+
     private String nome;
     private double preco;
 
@@ -23,13 +22,5 @@ public class ItemCardapio {
         System.out.println("Nome: " + nome);
         System.out.println("Preço: R$" + preco);
     }
-    
-    
-}
-    
-    
-    
-    
-    
-    
 
+}

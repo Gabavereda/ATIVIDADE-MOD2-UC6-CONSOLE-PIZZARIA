@@ -1,28 +1,23 @@
-
 package atv5;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Cardapio {
-    
-    
+
     private String nomePizzaria;
-     private List<ItemCardapio> itensCardapio;
-     private List<Bebida> bebidas;
-  
+    private List<ItemCardapio> itensCardapio;
+    private List<Bebida> bebidas;
 
     public Cardapio(String nomePizzaria) {
         this.nomePizzaria = nomePizzaria;
-        
-        this.itensCardapio = new ArrayList<>();  
+
+        this.itensCardapio = new ArrayList<>();
     }
 
     public List<Bebida> getBebidas() {
         return bebidas;
     }
-    
 
     public String getNomePizzaria() {
         return nomePizzaria;
@@ -36,11 +31,10 @@ public class Cardapio {
         return itensCardapio;
     }
 
-   
+    public void adicionarItemCardapio(ItemCardapio item) {
+        itensCardapio.add(item);
+    }
 
-  public void adicionarItemCardapio(ItemCardapio item) {
-        itensCardapio.add(item);}
-    
     public void imprimirCardapio() {
         System.out.println("=== Cardápio da Pizzaria " + nomePizzaria + " ===");
         System.out.println("Pizzas:");
@@ -60,10 +54,4 @@ public class Cardapio {
         }
     }
 
-  
-    
-    
-    }
-    
-    
-
+}
